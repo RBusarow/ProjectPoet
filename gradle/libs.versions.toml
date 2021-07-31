@@ -1,0 +1,112 @@
+[versions]
+androidTools = "7.0.0"
+anvil = "2.3.3"
+benManes = "0.36.0"
+changeTracker = "0.7.3"
+coroutines = "1.4.3"
+dependencyAnalysis = "0.63.0"
+dispatch = "1.0.0-beta09"
+detekt = "1.17.0"
+dokka = "1.4.10"
+gradleDoctor = "0.7.0"
+groovy = "3.0.8"
+hermit = "0.9.5"
+jUnit = "5.7.2"
+knit = "0.2.3"
+kotest = "4.6.1"
+kotlin = "1.5.21"
+kotlinx-coroutines = "1.5.1"
+kotlinter = "3.4.0"
+mavenPublish = "0.13.0"
+sonarPlugin = "2.6.1"
+spotless = "5.10.1"
+targetSdk = "30"
+taskTree = "1.5"
+versionName = "0.11.1"
+
+google-dagger = "2.38.1"
+
+[libraries]
+androidGradlePlugin = "com.android.tools.build:gradle:7.0.0"
+
+
+anvil-annotations = { module = "com.squareup.anvil:annotations", version.ref = "anvil" }
+anvil-compiler-api = { module = "com.squareup.anvil:compiler-api", version.ref = "anvil" }
+anvil-compiler-core = { module = "com.squareup.anvil:compiler", version.ref = "anvil" }
+anvil-compiler-utils = { module = "com.squareup.anvil:compiler-utils", version.ref = "anvil" }
+anvil-plugin = { module = "com.squareup.anvil:gradle-plugin", version.ref = "anvil" }
+
+codehaus-groovy-core = { module = "org.codehaus.groovy:groovy", version.ref = "groovy" }
+codehaus-groovy-xml = { module = "org.codehaus.groovy:groovy-xml", version.ref = "groovy" }
+
+
+google-auto-common = "com.google.auto:auto-common:1.1.2"
+
+google-auto-service-annotations = "com.google.auto.service:auto-service-annotations:1.0"
+google-auto-service-processor = "com.google.auto.service:auto-service:1.0"
+
+google-auto-service-ksp = "dev.zacsweers.autoservice:auto-service-ksp:0.5.3"
+
+google-dagger-api = { module = "com.google.dagger:dagger", version.ref = "google-dagger" }
+google-dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "google-dagger" }
+
+hermit-core = { module = "com.rickbusarow.hermit:hermit-core", version.ref = "hermit" }
+hermit-coroutines = { module = "com.rickbusarow.hermit:hermit-coroutines", version.ref = "hermit" }
+hermit-jUnit4 = { module = "com.rickbusarow.hermit:hermit-junit4", version.ref = "hermit" }
+hermit-jUnit5 = { module = "com.rickbusarow.hermit:hermit-junit5", version.ref = "hermit" }
+hermit-mockk = { module = "com.rickbusarow.hermit:hermit-mockk", version.ref = "hermit" }
+
+javaParser = "com.github.javaparser:javaparser-symbol-solver-core:3.22.1"
+
+javax-annotation-jsr250-api = "javax.annotation:jsr250-api:1.0"
+
+javax-inject = "javax.inject:javax.inject:1"
+
+junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jUnit" }
+junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jUnit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "jUnit" }
+junit-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "jUnit" }
+
+junit-junit4 = "junit:junit:4.13.2"
+
+junit-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "jUnit" }
+
+kotest-assertions = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
+kotest-assertionsShared = { module = "io.kotest:kotest-assertions-shared-jvm", version.ref = "kotest" }
+kotest-common-jvm = { module = "io.kotest:kotest-common-jvm", version.ref = "kotest" }
+kotest-properties = { module = "io.kotest:kotest-property-jvm", version.ref = "kotest" }
+kotest-runner = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
+
+kotlin-annotation-processing = { module = "org.jetbrains.kotlin:kotlin-annotation-processing-embeddable", version.ref = "kotlin" }
+kotlin-compiler = { module = "org.jetbrains.kotlin:kotlin-compiler-embeddable", version.ref = "kotlin" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-gradle-pluginApi = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin-api", version.ref = "kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+
+kotlin-compile-testing = "com.github.tschuchortdev:kotlin-compile-testing:1.4.2"
+
+kotlinter = "org.jmailen.gradle:kotlinter-gradle:3.4.5"
+
+kotlinx-atomicfu = "org.jetbrains.kotlinx:atomicfu-gradle-plugin:0.16.2"
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-jdk8 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-jvm = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+kotlinx-knit-test = "org.jetbrains.kotlinx:kotlinx-knit-test:0.3.0"
+
+mockk = "io.mockk:mockk:1.12.0"
+
+robolectric = "org.robolectric:robolectric:4.6.1"
+
+square-kotlinPoet = "com.squareup:kotlinpoet:1.9.0"
+
+swiftzer-semver = "net.swiftzer.semver:semver:1.1.1"
+
+timber = "com.jakewharton.timber:timber:4.7.1"
+
+[bundles]
+jUnit = ["junit-api", "junit-params", "junit-engine"]
+kotest = ["kotest-assertions", "kotest-properties", "kotest-runner"]
+hermit = ["hermit-core", "hermit-jUnit5"]
