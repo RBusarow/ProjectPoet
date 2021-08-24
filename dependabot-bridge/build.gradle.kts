@@ -19,6 +19,6 @@ plugins {
 
 dependencies {
 
-  dependencySync("org.jetbrains.kotlin:kotlin-annotation-processing-embeddable:1.5.21")
+  dependencySync("org.jetbrains.kotlin:kotlin-annotation-processing-embeddable:1.5.30")
   dependencySync("org.jetbrains.kotlin:kotlin-compiler-embeddable:1.5.21")
 }
