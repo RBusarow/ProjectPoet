@@ -1,0 +1,207 @@
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # every day at 10pm CST (4 UTC)
+    - cron: '0 4 * * *'
+
+
+jobs:
+
+  cancel-other-jobs:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # cancel previous jobs
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.0
+        env:
+          access_token: '${{ github.token }}'
+
+  detekt:
+
+    runs-on: ubuntu-latest
+    if: github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses : actions/setup-java@v2
+        with :
+          distribution : 'adopt'
+          java-version : '14'
+          cache: 'gradle'
+
+      - name: detekt
+        run: ./gradlew detekt --no-daemon
+
+  ktlint:
+
+    runs-on: ubuntu-latest
+    if: github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses : actions/setup-java@v2
+        with :
+          distribution : 'adopt'
+          java-version : '14'
+          cache: 'gradle'
+
+      # formats all kotlin files
+      - name: KtLint format
+        run: ./gradlew ktlintformat -q --no-daemon
+
+      # If KtLint generated changes, commit and push those changes.
+      - name: commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply KtLint format
+          commit_options: '--no-verify --signoff'
+
+  versioning:
+
+    runs-on: ubuntu-latest
+    if: github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses : actions/setup-java@v2
+        with :
+          distribution : 'adopt'
+          java-version : '14'
+          cache: 'gradle'
+
+      - name: Sync versions in website docs
+        run: ./gradlew updateWebsiteNextDocsVersionRefs --no-daemon
+
+      - name: commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: update docs versions
+          commit_options: '--no-verify --signoff'
+
+      - name: Update version in website package.json
+        run: ./gradlew updateWebsitePackageJsonVersion --no-daemon
+
+      - name: commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: update website versions
+          commit_options: '--no-verify --signoff'
+
+#  api-check:
+#
+#    runs-on: ubuntu-latest
+#    if: github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#        with:
+#          ref: ${{ github.event.pull_request.head.ref }}
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          fetch-depth: 0
+#
+#      - name: Set up JDK
+#        uses : actions/setup-java@v2
+#        with :
+#          distribution : 'adopt'
+#          java-version : '14'
+#          cache: 'gradle'
+#
+#      - name: api check
+#        run: ./gradlew apicheck --no-daemon
+
+  tests-ubuntu:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses : actions/setup-java@v2
+        with :
+          distribution : 'adopt'
+          java-version : '14'
+          cache: 'gradle'
+
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/buildSrc/.gradle
+            ~/buildSrc/build
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle.kts', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: all tests
+        run: ./gradlew testJvm --no-daemon
+
+#  instrumentation-tests:
+#    name: Instrumentation tests
+#    runs-on: macos-latest
+#    timeout-minutes: 20
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#        with:
+#          ref: ${{ github.event.pull_request.head.ref }}
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          fetch-depth: 0
+#
+#      - name: Set up JDK
+#        uses : actions/setup-java@v2
+#        with :
+#          distribution : 'adopt'
+#          java-version : '14'
+#          cache: 'gradle'
+#
+#      - uses: actions/cache@v2
+#        with:
+#          path: |
+#            ~/buildSrc/.gradle
+#            ~/buildSrc/build
+#          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle.kts', '**/gradle-wrapper.properties') }}
+#          restore-keys: |
+#            ${{ runner.os }}-gradle-
+#
+#      - name: Instrumentation Tests
+#        uses: reactivecircus/android-emulator-runner@v2
+#        with:
+#          api-level: 29
+#          target: default
+#          arch: x86_64
+#          script: ./gradlew connectedCheck --no-build-cache --no-daemon --stacktrace
+#
+#      - name: Upload results
+#        uses: actions/upload-artifact@v2
+#        if: failure()
+#        with:
+#          name: insrumentation-test-results
+#          path: ./**/build/reports/androidTests/connected/**
