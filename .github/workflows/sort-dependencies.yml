@@ -18,7 +18,7 @@ jobs:
         env:
           access_token: '${{ secrets.PERSONAL_ACCESS_TOKEN }}'
 
-  dependency-sync:
+  sort-dependencies:
 
     runs-on: ubuntu-latest
 
