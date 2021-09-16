@@ -31,7 +31,7 @@ dependencies {
   dependencySync("com.vanniktech:gradle-maven-publish-plugin:0.18.0")
 
   dependencySync("io.kotest:kotest-assertions-core-jvm:4.6.1")
-  dependencySync("io.kotest:kotest-property-jvm:4.6.1")
+  dependencySync("io.kotest:kotest-property-jvm:4.6.2")
   dependencySync("io.kotest:kotest-runner-junit5-jvm:4.6.1")
 
   dependencySync("javax.inject:javax.inject:1")
@@ -40,9 +40,9 @@ dependencies {
 
   dependencySync("org.codehaus.groovy:groovy-xml:3.0.8")
   dependencySync("org.codehaus.groovy:groovy:3.0.8")
-  dependencySync("org.jetbrains.kotlin:kotlin-compiler-embeddable:1.5.10")
-  dependencySync("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
-  dependencySync("org.jetbrains.kotlin:kotlin-reflect:1.5.10")
+  dependencySync("org.jetbrains.kotlin:kotlin-compiler-embeddable:1.5.30")
+  dependencySync("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30")
+  dependencySync("org.jetbrains.kotlin:kotlin-reflect:1.5.30")
   dependencySync("org.jetbrains.kotlinx:kotlinx-knit:0.3.0")
   dependencySync("org.jlleitschuh.gradle:ktlint-gradle:10.2.0")
   dependencySync("org.junit.jupiter:junit-jupiter-api:5.7.2")
