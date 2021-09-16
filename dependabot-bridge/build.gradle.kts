@@ -46,6 +46,6 @@ dependencies {
   dependencySync("org.jetbrains.kotlinx:kotlinx-knit:0.3.0")
   dependencySync("org.jlleitschuh.gradle:ktlint-gradle:10.2.0")
   dependencySync("org.junit.jupiter:junit-jupiter-api:5.8.0")
-  dependencySync("org.junit.jupiter:junit-jupiter-engine:5.7.2")
-  dependencySync("org.junit.jupiter:junit-jupiter-params:5.7.2")
+  dependencySync("org.junit.jupiter:junit-jupiter-engine:5.8.0")
+  dependencySync("org.junit.jupiter:junit-jupiter-params:5.8.0")
 }
