@@ -30,9 +30,9 @@ dependencies {
   dependencySync("com.squareup:kotlinpoet:1.9.0")
   dependencySync("com.vanniktech:gradle-maven-publish-plugin:0.18.0")
 
-  dependencySync("io.kotest:kotest-assertions-core-jvm:4.6.1")
-  dependencySync("io.kotest:kotest-property-jvm:4.6.1")
-  dependencySync("io.kotest:kotest-runner-junit5-jvm:4.6.1")
+  dependencySync("io.kotest:kotest-assertions-core-jvm:4.6.2")
+  dependencySync("io.kotest:kotest-property-jvm:4.6.2")
+  dependencySync("io.kotest:kotest-runner-junit5-jvm:4.6.2")
 
   dependencySync("javax.inject:javax.inject:1")
 
@@ -45,7 +45,7 @@ dependencies {
   dependencySync("org.jetbrains.kotlin:kotlin-reflect:1.5.30")
   dependencySync("org.jetbrains.kotlinx:kotlinx-knit:0.3.0")
   dependencySync("org.jlleitschuh.gradle:ktlint-gradle:10.2.0")
-  dependencySync("org.junit.jupiter:junit-jupiter-api:5.7.2")
+  dependencySync("org.junit.jupiter:junit-jupiter-api:5.8.0")
   dependencySync("org.junit.jupiter:junit-jupiter-engine:5.7.2")
   dependencySync("org.junit.jupiter:junit-jupiter-params:5.7.2")
 }
