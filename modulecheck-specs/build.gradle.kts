@@ -29,7 +29,9 @@ dependencies {
 
 
 
+
   compileOnly(gradleApi())
+
 
 
 
@@ -38,8 +40,10 @@ dependencies {
 
 
 
+
   testImplementation(libs.bundles.jUnit)
   testImplementation(libs.bundles.kotest)
+
 
 
 
