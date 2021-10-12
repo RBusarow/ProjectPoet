@@ -49,8 +49,8 @@ jobs:
             ${{ runner.os }}-gradle-
 
       # formats all kotlin files
-      - name: Sort dependencies
-        run: ./gradlew modulechecksortdependencies --no-daemon
+      # - name: Sort dependencies
+      #   run: ./gradlew modulechecksortdependencies --no-daemon
 
       # If ModuleCheck generated changes, commit and push those changes.
       - name: commit changes
