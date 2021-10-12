@@ -33,9 +33,11 @@ dependencies {
 
 
 
+
   dependencySync("io.kotest:kotest-assertions-core-jvm:4.6.3")
   dependencySync("io.kotest:kotest-property-jvm:4.6.3")
   dependencySync("io.kotest:kotest-runner-junit5-jvm:4.6.3")
+
 
 
 
@@ -45,7 +47,9 @@ dependencies {
 
 
 
+
   dependencySync("net.swiftzer.semver:semver:1.1.1")
+
 
 
 
