@@ -19,7 +19,7 @@ plugins {
 
 dependencies {
 
-  dependencySync("com.android.tools.build:gradle:7.0.2")
+  dependencySync("com.android.tools.build:gradle:7.0.3")
   dependencySync("com.github.javaparser:javaparser-symbol-solver-core:3.23.1")
   dependencySync("com.rickbusarow.hermit:hermit-core:0.9.5")
   dependencySync("com.rickbusarow.hermit:hermit-coroutines:0.9.5")
@@ -30,13 +30,17 @@ dependencies {
   dependencySync("com.squareup:kotlinpoet:1.10.1")
   dependencySync("com.vanniktech:gradle-maven-publish-plugin:0.18.0")
 
+
   dependencySync("io.kotest:kotest-assertions-core-jvm:4.6.3")
   dependencySync("io.kotest:kotest-property-jvm:4.6.3")
   dependencySync("io.kotest:kotest-runner-junit5-jvm:4.6.3")
 
+
   dependencySync("javax.inject:javax.inject:1")
 
+
   dependencySync("net.swiftzer.semver:semver:1.1.1")
+
 
   dependencySync("org.codehaus.groovy:groovy-xml:3.0.9")
   dependencySync("org.codehaus.groovy:groovy:3.0.9")
