@@ -29,11 +29,15 @@ dependencies {
   dependencySync("com.squareup.anvil:gradle-plugin:2.3.6")
   dependencySync("com.squareup:kotlinpoet:1.10.1")
   dependencySync("com.vanniktech:gradle-maven-publish-plugin:0.18.0")
+
   dependencySync("io.kotest:kotest-assertions-core-jvm:4.6.3")
   dependencySync("io.kotest:kotest-property-jvm:4.6.3")
   dependencySync("io.kotest:kotest-runner-junit5-jvm:4.6.3")
+
   dependencySync("javax.inject:javax.inject:1")
+
   dependencySync("net.swiftzer.semver:semver:1.1.1")
+
   dependencySync("org.codehaus.groovy:groovy-xml:3.0.9")
   dependencySync("org.codehaus.groovy:groovy:3.0.9")
   dependencySync("org.jetbrains.kotlin:kotlin-compiler-embeddable:1.5.31")
