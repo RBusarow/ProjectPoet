@@ -54,16 +54,11 @@ gradleEnterprise {
   }
 }
 
-rootProject.name = "ModuleCheck"
+rootProject.name = "ProjectPoet"
 enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(
   ":dependabot-bridge",
-  ":modulecheck-api",
-  ":modulecheck-core",
-  ":modulecheck-internal-testing",
-  ":modulecheck-plugin",
-  ":modulecheck-psi",
-  ":modulecheck-specs"
+  ":projectpoet-core"
 )
