@@ -57,7 +57,7 @@ kotlinx-knit = { module = "org.jetbrains.kotlinx:kotlinx-knit", version.ref = "k
 
 ktlint-gradle = "org.jlleitschuh.gradle:ktlint-gradle:10.2.0"
 
-semVer = "net.swiftzer.semver:semver:1.1.1"
+semVer = "net.swiftzer.semver:semver:1.1.2"
 
 vanniktech-maven-publish = "com.vanniktech:gradle-maven-publish-plugin:0.18.0"
 
