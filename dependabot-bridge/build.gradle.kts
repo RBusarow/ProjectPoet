@@ -26,13 +26,13 @@ dependencies {
   dependencySync("com.rickbusarow.hermit:hermit-junit4:0.9.5")
   dependencySync("com.rickbusarow.hermit:hermit-junit5:0.9.5")
   dependencySync("com.rickbusarow.hermit:hermit-mockk:0.9.5")
-  dependencySync("com.squareup.anvil:gradle-plugin:2.3.9")
+  dependencySync("com.squareup.anvil:gradle-plugin:2.3.10-1-6-0")
   dependencySync("com.squareup:kotlinpoet:1.10.2")
   dependencySync("com.vanniktech:gradle-maven-publish-plugin:0.18.0")
 
-  dependencySync("io.kotest:kotest-assertions-core-jvm:4.6.3")
-  dependencySync("io.kotest:kotest-property-jvm:4.6.3")
-  dependencySync("io.kotest:kotest-runner-junit5-jvm:4.6.3")
+  dependencySync("io.kotest:kotest-assertions-core-jvm:5.0.0")
+  dependencySync("io.kotest:kotest-property-jvm:5.0.0")
+  dependencySync("io.kotest:kotest-runner-junit5-jvm:5.0.0")
 
   dependencySync("javax.inject:javax.inject:1")
 
