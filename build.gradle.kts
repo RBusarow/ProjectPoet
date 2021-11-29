@@ -36,7 +36,7 @@ buildscript {
 
 plugins {
   id("com.github.ben-manes.versions") version "0.39.0"
-  id("io.gitlab.arturbosch.detekt") version "1.18.1"
+  id("io.gitlab.arturbosch.detekt") version "1.19.0"
   id("com.rickbusarow.module-check") version "0.11.3"
   id("org.jetbrains.dokka") version "1.6.0"
   id("com.osacky.doctor") version "0.7.3"
